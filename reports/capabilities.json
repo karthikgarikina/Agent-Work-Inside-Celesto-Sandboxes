@@ -1,0 +1,14 @@
+{
+  "capabilities": [
+    {
+      "id": "browser",
+      "why": "The agent uses Celesto's isolated browser runtime to navigate public documentation, inspect dynamic web pages, and scrape source citations without exposing the host environment to malicious web scripts or client-side browser exploits.",
+      "evidence_path": "src/celesto_adapter/tool_gateway.py"
+    },
+    {
+      "id": "safety_hooks",
+      "why": "Safety hooks act as a deterministic pre-execution gatekeeper, inspecting every command requested by the agent, enforcing strict network destination allowlists, and blocking destructive operations and canary leaks before reaching the microVM.",
+      "evidence_path": "src/celesto_adapter/safety_policy.py"
+    }
+  ]
+}

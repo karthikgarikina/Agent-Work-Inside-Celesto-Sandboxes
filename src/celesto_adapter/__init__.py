@@ -1,0 +1,1 @@
+﻿# Celesto adapter package

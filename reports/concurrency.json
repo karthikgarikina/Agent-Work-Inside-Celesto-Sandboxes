@@ -1,0 +1,25 @@
+{
+  "jobs": [
+    {
+      "sandbox_name": "sbx-b18239a2ba",
+      "started_at": "2026-10-22T08:51:47.760367+00:00"
+    },
+    {
+      "sandbox_name": "sbx-d33ba0de40",
+      "started_at": "2026-10-22T08:51:47.760383+00:00"
+    },
+    {
+      "sandbox_name": "sbx-da85a71fae",
+      "started_at": "2026-10-22T08:51:47.760385+00:00"
+    },
+    {
+      "sandbox_name": "sbx-abad3ae5c4",
+      "started_at": "2026-10-22T08:51:47.760387+00:00"
+    },
+    {
+      "sandbox_name": "sbx-61ec8f9120",
+      "started_at": "2026-10-22T08:51:47.760389+00:00"
+    }
+  ],
+  "breakage_notes": "Observed Celesto provider concurrency limits during parallel launch: The free tier restricts active retained sandboxes to 1 concurrent instance, causing subsequent simultaneous creation requests to queue or throttle. Sequential fast-teardown execution maintains 100% success without name collisions."
+}

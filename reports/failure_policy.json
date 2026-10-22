@@ -1,0 +1,7 @@
+{
+  "failed_step": 7,
+  "total_steps": 10,
+  "policy": "fresh",
+  "rationale": "When an agent encounters a mid-task failure at step 7 during deep claim verification, partial downloads, corrupted cache files, or dirty memory allocations can compromise downstream synthesis. The 'fresh' recovery policy is deliberately chosen because it guarantees complete isolation and a deterministic clean-slate environment. Discarding the failed sandbox and provisioning a pristine microVM prevents silent state poisoning, eliminates disk contamination, and ensures repeatable evaluation without depending on hypervisor snapshot support across cloud providers.",
+  "trace_path": "reports/failure_trace.jsonl"
+}

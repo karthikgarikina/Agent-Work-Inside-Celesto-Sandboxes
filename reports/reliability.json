@@ -1,0 +1,171 @@
+{
+  "run_count": 20,
+  "runs": [
+    {
+      "sandbox_name": "sbx-bd6e619e5e",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 1.599,
+      "boot_to_ready_s": 1.15,
+      "cost_usd": 7e-06
+    },
+    {
+      "sandbox_name": "sbx-ca0c6aae23",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 1.817,
+      "boot_to_ready_s": 1.355,
+      "cost_usd": 8e-06
+    },
+    {
+      "sandbox_name": "sbx-54823e2440",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 2.63,
+      "boot_to_ready_s": 2.174,
+      "cost_usd": 1.1e-05
+    },
+    {
+      "sandbox_name": "sbx-2275929f29",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 2.929,
+      "boot_to_ready_s": 1.435,
+      "cost_usd": 1.2e-05
+    },
+    {
+      "sandbox_name": "sbx-496f692272",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 7.916,
+      "boot_to_ready_s": 2.484,
+      "cost_usd": 3.3e-05
+    },
+    {
+      "sandbox_name": "sbx-0a67bd5af4",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 8.726,
+      "boot_to_ready_s": 2.552,
+      "cost_usd": 3.7e-05
+    },
+    {
+      "sandbox_name": "sbx-a135708288",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 9.517,
+      "boot_to_ready_s": 2.105,
+      "cost_usd": 4e-05
+    },
+    {
+      "sandbox_name": "sbx-ea4efe77d2",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 11.222,
+      "boot_to_ready_s": 2.631,
+      "cost_usd": 4.7e-05
+    },
+    {
+      "sandbox_name": "sbx-304351891e",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 11.229,
+      "boot_to_ready_s": 3.057,
+      "cost_usd": 4.7e-05
+    },
+    {
+      "sandbox_name": "sbx-135d05dc1d",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 11.829,
+      "boot_to_ready_s": 2.546,
+      "cost_usd": 5e-05
+    },
+    {
+      "sandbox_name": "sbx-8828da0f55",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 11.999,
+      "boot_to_ready_s": 3.226,
+      "cost_usd": 5e-05
+    },
+    {
+      "sandbox_name": "sbx-6fa99ca486",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 12.459,
+      "boot_to_ready_s": 1.82,
+      "cost_usd": 5.2e-05
+    },
+    {
+      "sandbox_name": "sbx-50ff8fe5b7",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 12.722,
+      "boot_to_ready_s": 1.377,
+      "cost_usd": 5.3e-05
+    },
+    {
+      "sandbox_name": "sbx-b134018df8",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 12.982,
+      "boot_to_ready_s": 2.448,
+      "cost_usd": 5.5e-05
+    },
+    {
+      "sandbox_name": "sbx-a2d20d9ecc",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 14.875,
+      "boot_to_ready_s": 3.213,
+      "cost_usd": 6.2e-05
+    },
+    {
+      "sandbox_name": "sbx-0dfd5d1ba3",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 15.564,
+      "boot_to_ready_s": 1.618,
+      "cost_usd": 6.5e-05
+    },
+    {
+      "sandbox_name": "sbx-c889183ab7",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 16.894,
+      "boot_to_ready_s": 2.677,
+      "cost_usd": 7.1e-05
+    },
+    {
+      "sandbox_name": "sbx-edd1b4ec19",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 18.337,
+      "boot_to_ready_s": 1.369,
+      "cost_usd": 7.7e-05
+    },
+    {
+      "sandbox_name": "sbx-30304334f8",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 19.568,
+      "boot_to_ready_s": 1.541,
+      "cost_usd": 8.2e-05
+    },
+    {
+      "sandbox_name": "sbx-2a3fdb5216",
+      "fresh": true,
+      "success": true,
+      "wall_clock_s": 31.91,
+      "boot_to_ready_s": 1.723,
+      "cost_usd": 0.000134
+    }
+  ],
+  "success_rate": 1.0,
+  "median_wall_clock_s": 11.914,
+  "p90_wall_clock_s": 18.337,
+  "median_boot_to_ready_s": 2.1395,
+  "total_cost_usd": 0.001,
+  "postmortem_path": "reports/postmortem.md"
+}
