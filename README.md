@@ -83,13 +83,15 @@ We leverage Celesto's microVM architecture and key capabilities:
 
 2. **Safety hooks & Pre-Run Inspection (safety_hooks)**:
    - Every tool command passes through our pre-execution safety policy before dispatch to the guest.
-   - Destructive operations (m -rf /, mkfs, fork bombs), host secret probing (cat /etc/shadow, scanning .env, Docker sockets), and canary token leaks are intercepted. Blocked commands are recorded in [logs/commands.jsonl](logs/commands.jsonl) with decision: "block" and execution_target: "celesto_sandbox".
+   - Destructive operations (
+m -rf /, mkfs, fork bombs), host secret probing (cat /etc/shadow, scanning .env, Docker sockets), and canary token leaks are intercepted. Blocked commands are recorded in [logs/commands.jsonl](logs/commands.jsonl) with decision: "block" and execution_target: "celesto_sandbox".
    - *Evidence*: [src/celesto_adapter/safety_policy.py](src/celesto_adapter/safety_policy.py).
 
 3. **Lifecycle Hygiene**:
    - Every sandbox uses a unique name conforming to sbx-[a-z0-9]{8,}.
    - Robust 	ry/finally context managers guarantee that sandboxes are cleanly torn down on success, exceptions, and SIGINT/Ctrl-C interrupts, preventing orphaned computers.
-   - *Evidence*: [src/celesto_adapter/client.py](src/celesto_adapter/client.py) and [eports/lifecycle.json](reports/lifecycle.json).
+   - *Evidence*: [src/celesto_adapter/client.py](src/celesto_adapter/client.py) and [
+eports/lifecycle.json](reports/lifecycle.json).
 
 ---
 
@@ -106,7 +108,9 @@ The agent's reliability is evaluated across 20 fresh Celesto microVM sandboxes (
 | **Median Boot-to-Ready Time** | 2.140 s | Mean of 10th and 11th sorted values |
 | **Total Cost** | $0.0010 USD | Sum of all run costs (.015/hr Micro tier) |
 
-The complete benchmark data is documented in [eports/reliability.json](reports/reliability.json), and an in-depth failure analysis is available in [eports/postmortem.md](reports/postmortem.md).
+The complete benchmark data is documented in [
+eports/reliability.json](reports/reliability.json), and an in-depth failure analysis is available in [
+eports/postmortem.md](reports/postmortem.md).
 
 ---
 
@@ -122,7 +126,9 @@ To verify containment, we execute a deliberate **prompt injection exfiltration a
 3. **Verification**:
    - locked: true
    - host_untouched: true
-   - *Evidence*: [eports/evidence/containment.log](reports/evidence/containment.log) and [eports/containment.json](reports/containment.json).
+   - *Evidence*: [
+eports/evidence/containment.log](reports/evidence/containment.log) and [
+eports/containment.json](reports/containment.json).
 
 ---
 
@@ -147,7 +153,9 @@ Created ──► Ready ──► Running ──► Succeeded ──► Deleted
 - **Clean-Slate Isolation**: The resh policy cleanly deletes the tainted guest sandbox, allocates a new pristine microVM (sbx-...), and restarts the task cleanly.
 - **Provider Agnostic**: Unlike hypervisor memory snapshots which have host-kernel or OS constraints, the resh policy works uniformly across all Celesto Cloud and local environments.
 
-The complete step trace and policy rationale are recorded in [eports/failure_trace.jsonl](reports/failure_trace.jsonl) and [eports/failure_policy.json](reports/failure_policy.json).
+The complete step trace and policy rationale are recorded in [
+eports/failure_trace.jsonl](reports/failure_trace.jsonl) and [
+eports/failure_policy.json](reports/failure_policy.json).
 
 ---
 
