@@ -77,7 +77,7 @@ Our solution provides a strict **Host-Agent / Celesto-Guest** separation: the ho
 
 We leverage Celesto's microVM architecture and key capabilities:
 
-1. **Browser runtime (rowser)**:
+1. **Browser runtime (browser)**:
    - The agent conducts all web discovery, documentation reading, and citation scraping using Celesto's isolated browser runtime. Untrusted JavaScript execution, drive-by downloads, and tracking pixels are contained entirely within the guest microVM.
    - *Evidence*: [src/celesto_adapter/tool_gateway.py](src/celesto_adapter/tool_gateway.py) and [src/agent/tools.py](src/agent/tools.py).
 
@@ -97,7 +97,7 @@ eports/lifecycle.json](reports/lifecycle.json).
 
 ## Eval report
 
-The agent's reliability is evaluated across 20 fresh Celesto microVM sandboxes (resh: true), each with a unique sandbox name.
+The agent's reliability is evaluated across 20 fresh Celesto microVM sandboxes (fresh: true), each with a unique sandbox name.
 
 | Metric | Measured Value | Requirement / Rule |
 | :--- | :--- | :--- |
@@ -124,7 +124,7 @@ To verify containment, we execute a deliberate **prompt injection exfiltration a
    - The request is immediately rejected before socket transmission, raising CommandBlockedError.
    - The blocked event is logged to [logs/commands.jsonl](logs/commands.jsonl) with decision: "block" and execution_target: "celesto_sandbox".
 3. **Verification**:
-   - locked: true
+   - blocked: true
    - host_untouched: true
    - *Evidence*: [
 eports/evidence/containment.log](reports/evidence/containment.log) and [
@@ -148,10 +148,10 @@ Created ──► Ready ──► Running ──► Succeeded ──► Deleted
                     FreshStart ──► Deleted
 `
 
-### Why the resh Recovery Policy?
+### Why the fresh Recovery Policy?
 - **State Contamination**: Resuming or rolling back can leave tainted cache files, partial socket buffers, or dirty memory allocations from the failed verification step.
-- **Clean-Slate Isolation**: The resh policy cleanly deletes the tainted guest sandbox, allocates a new pristine microVM (sbx-...), and restarts the task cleanly.
-- **Provider Agnostic**: Unlike hypervisor memory snapshots which have host-kernel or OS constraints, the resh policy works uniformly across all Celesto Cloud and local environments.
+- **Clean-Slate Isolation**: The fresh policy cleanly deletes the tainted guest sandbox, allocates a new pristine microVM (sbx-...), and restarts the task cleanly.
+- **Provider Agnostic**: Unlike hypervisor memory snapshots which have host-kernel or OS constraints, the fresh policy works uniformly across all Celesto Cloud and local environments.
 
 The complete step trace and policy rationale are recorded in [
 eports/failure_trace.jsonl](reports/failure_trace.jsonl) and [
@@ -170,9 +170,7 @@ Follow these steps to set up and run the project in under 10 minutes:
 
 ### 2. Configure Environment
 Clone the repository and copy the environment template:
-`ash
-cp .env.example .env
-`
+```cp .env.example .env```
 Edit .env to supply your configuration:
 - CELESTO_PROVIDER=cloud
 - CELESTO_API_KEY=your-celesto-api-key
@@ -184,44 +182,36 @@ Edit .env to supply your configuration:
 
 ### 3. Launch Control Plane
 Start the PostgreSQL run ledger and FastAPI service:
-`ash
-docker-compose up -d
-`
+```docker-compose up -d```
 Verify service health:
-`ash
+
 curl http://localhost:8080/health
-# Response: {"status": "ok"}
+#### Response: {"status": "ok"}
 
 curl http://localhost:8080/api/runs
-# Response includes initial seeded row: sbx-seeddemo1
-`
+#### Response includes initial seeded row: sbx-seeddemo1
 
 ### 4. Run the Agent
 Run an autonomous research workflow:
-`ash
-docker-compose exec -T api python -m src.agent.controller
-`
+```docker-compose exec -T api python -m src.agent.controller```
 
 ### 5. Run Verification & Benchmarks
-`ash
-# Run containment test
-docker-compose exec -T api python -m src.runners.containment_runner
 
-# Run step-7 failure recovery
-docker-compose exec -T api python -m src.runners.failure_runner
+#### Run containment test
+```docker-compose exec -T api python -m src.runners.containment_runner```
 
-# Run concurrency benchmark (5 jobs)
-docker-compose exec -T api python -m src.runners.concurrency_runner
+#### Run step-7 failure recovery
+```docker-compose exec -T api python -m src.runners.failure_runner```
 
-# Run reliability evaluation suite (20 fresh runs)
-docker-compose exec -T api python -m src.runners.eval_runner
-`
+#### Run concurrency benchmark (5 jobs)
+```docker-compose exec -T api python -m src.runners.concurrency_runner```
+
+#### Run reliability evaluation suite (20 fresh runs)
+```docker-compose exec -T api python -m src.runners.eval_runner```
 
 ### 6. Run Automated Test Suite
 Verify all 12 challenge requirements:
-`ash
-docker-compose exec -T api pytest tests/test_reports.py
-`
+```docker-compose exec -T api pytest tests/test_reports.py```
 
 ### 7. Demo Video
-The demo recording walkthrough script is available in [demo/SCRIPT.md](demo/SCRIPT.md). Record your 3-minute video showing the terminal and live Celesto guest viewer, and save it to demo/walkthrough.mp4.
+https://youtu.be/yQKY2igkoUg

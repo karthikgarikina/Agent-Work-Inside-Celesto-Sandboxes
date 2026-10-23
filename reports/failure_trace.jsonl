@@ -1,12 +1,12 @@
-{"ts": "2026-10-23T09:37:03.714520+00:00", "sandbox_name": "sbx-21cc5317bf", "event": "step_start", "step": 1, "description": "Initialize research plan for 'Autonomous MicroVM Sandboxing Architecture for AI Agents'"}
-{"ts": "2026-10-23T09:37:03.714547+00:00", "sandbox_name": "sbx-21cc5317bf", "event": "step_start", "step": 2, "description": "Create initial Celesto microVM sandbox"}
-{"ts": "2026-10-23T09:37:27.960113+00:00", "sandbox_name": "sbx-21cc5317bf", "event": "step_failure", "step": 7, "description": "Step 7 failed as designed: Simulated transient network timeout during deep source verification at step 7."}
-{"ts": "2026-10-23T09:37:27.960134+00:00", "sandbox_name": "sbx-21cc5317bf", "event": "policy_applied", "policy": "fresh", "failed_step": 7, "description": "Mid-task failure encountered at step 7. Executing fresh policy: tearing down tainted guest and launching new sandbox."}
-{"ts": "2026-10-23T09:37:27.960138+00:00", "sandbox_name": "sbx-21cc5317bf", "event": "sandbox_cleaned", "state": "deleted"}
-{"ts": "2026-10-23T09:37:27.960205+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "replacement_created", "policy": "fresh", "description": "Clean replacement sandbox booted on Celesto Cloud"}
-{"ts": "2026-10-23T09:38:39.820450+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "step_start", "step": 7, "description": "Re-executing cross-verification with clean guest state"}
-{"ts": "2026-10-23T09:38:39.820474+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "step_start", "step": 8, "description": "Synthesize findings into structured report using LLM"}
-{"ts": "2026-10-23T09:38:39.820481+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "step_start", "step": 9, "description": "Write report.md inside guest filesystem"}
-{"ts": "2026-10-23T09:38:39.820488+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "step_start", "step": 10, "description": "Verify proof output inside guest"}
-{"ts": "2026-10-23T09:38:39.820492+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "workflow_completed", "step": 10, "state": "succeeded"}
-{"ts": "2026-10-23T09:38:39.820498+00:00", "sandbox_name": "sbx-6b982b8f22", "event": "sandbox_cleaned", "state": "deleted"}
+{"ts": "2026-10-23T10:34:12.635667+00:00", "sandbox_name": "sbx-5fdf2c9d27", "event": "step_start", "step": 1, "description": "Initialize research plan for 'Autonomous MicroVM Sandboxing Architecture for AI Agents'"}
+{"ts": "2026-10-23T10:34:12.635681+00:00", "sandbox_name": "sbx-5fdf2c9d27", "event": "step_start", "step": 2, "description": "Create initial Celesto microVM sandbox"}
+{"ts": "2026-10-23T10:34:39.484539+00:00", "sandbox_name": "sbx-5fdf2c9d27", "event": "step_failure", "step": 7, "description": "Step 7 failed as designed: Simulated transient network timeout during deep source verification at step 7."}
+{"ts": "2026-10-23T10:34:39.484569+00:00", "sandbox_name": "sbx-5fdf2c9d27", "event": "policy_applied", "policy": "fresh", "failed_step": 7, "description": "Mid-task failure encountered at step 7. Executing fresh policy: tearing down tainted guest and launching new sandbox."}
+{"ts": "2026-10-23T10:34:39.484575+00:00", "sandbox_name": "sbx-5fdf2c9d27", "event": "sandbox_cleaned", "state": "deleted"}
+{"ts": "2026-10-23T10:34:39.484676+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "replacement_created", "policy": "fresh", "description": "Clean replacement sandbox booted on Celesto Cloud"}
+{"ts": "2026-10-23T10:35:25.667261+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "step_start", "step": 7, "description": "Re-executing cross-verification with clean guest state"}
+{"ts": "2026-10-23T10:35:25.667279+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "step_start", "step": 8, "description": "Synthesize findings into structured report using LLM"}
+{"ts": "2026-10-23T10:35:25.667285+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "step_start", "step": 9, "description": "Write report.md inside guest filesystem"}
+{"ts": "2026-10-23T10:35:25.667290+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "step_start", "step": 10, "description": "Verify proof output inside guest"}
+{"ts": "2026-10-23T10:35:25.667294+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "workflow_completed", "step": 10, "state": "succeeded"}
+{"ts": "2026-10-23T10:35:25.667299+00:00", "sandbox_name": "sbx-ec0798f4f5", "event": "sandbox_cleaned", "state": "deleted"}
