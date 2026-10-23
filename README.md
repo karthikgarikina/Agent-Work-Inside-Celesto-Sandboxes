@@ -12,7 +12,7 @@ A resilient, verifiable AI Research & Report Agent whose tools run strictly insi
 
 The system operates across two strict trust zones:
 
-`
+```text
 +-----------------------------------------------------------------------------------+
 |                            TRUSTED HOST CONTROL PLANE                             |
 |                                                                                   |
@@ -58,7 +58,7 @@ The system operates across two strict trust zones:
 |   * Hardware-isolated microVM prevents escapes to host                            |
 |   * Outbound network policy restricts exfiltration                                |
 +-----------------------------------------------------------------------------------+
-`
+```
 
 ---
 
