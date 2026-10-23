@@ -136,7 +136,7 @@ eports/containment.json](reports/containment.json).
 
 In multi-step workflows, agent failures are inevitable. We model a 10-step research workflow with a deterministic failure injection point at **step 7** (deep claim cross-verification):
 
-`
+```text
 Created ──► Ready ──► Running ──► Succeeded ──► Deleted
                          │
                    (Step 7 Fails)
@@ -146,7 +146,7 @@ Created ──► Ready ──► Running ──► Succeeded ──► Deleted
                          │
                          ▼ (Policy: fresh)
                     FreshStart ──► Deleted
-`
+```
 
 ### Why the fresh Recovery Policy?
 - **State Contamination**: Resuming or rolling back can leave tainted cache files, partial socket buffers, or dirty memory allocations from the failed verification step.
