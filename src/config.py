@@ -1,4 +1,4 @@
-﻿import os
+import os
 from typing import Any
 from pydantic_settings import BaseSettings
 from pydantic import Field, field_validator
@@ -13,6 +13,10 @@ class Settings(BaseSettings):
     llm_base_url: str = Field(default="https://example-llm-host/v1", alias="LLM_BASE_URL")
     llm_api_key: str = Field(default="replace-me", alias="LLM_API_KEY")
     llm_model: str = Field(default="replace-with-a-model-name", alias="LLM_MODEL")
+    llm_fallback_models: str = Field(
+        default="gemini-3.1-flash-lite,gemini-3.5-flash",
+        alias="LLM_FALLBACK_MODELS",
+    )
 
     database_url: str = Field(
         default="postgresql://ledger:ledger@ledger:5432/ledger",

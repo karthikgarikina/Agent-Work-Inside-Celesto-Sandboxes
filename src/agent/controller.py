@@ -33,16 +33,12 @@ class ResearchAgentController:
         if not settings.llm_api_key or settings.llm_api_key == "replace-me":
             return self._fallback_report(topic, raw_facts)
 
-        models_to_try = [
-            settings.llm_model,
-            "gemini-3.1-flash-lite",
-            "gemini-3.5-flash",
-            "gemini-flash-latest",
-        ]
-        unique_models = []
-        for m in models_to_try:
-            if m and m not in unique_models:
-                unique_models.append(m)
+        models_to_try = [settings.llm_model]
+        if settings.llm_fallback_models:
+            for fallback in settings.llm_fallback_models.split(","):
+                f = fallback.strip()
+                if f and f not in models_to_try:
+                    models_to_try.append(f)
 
         url = settings.llm_base_url.rstrip("/") + "/chat/completions"
         headers = {
