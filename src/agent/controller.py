@@ -59,7 +59,7 @@ class ResearchAgentController:
             f"4. Note that tool execution and data verification were quarantined inside a Celesto microVM sandbox."
         )
 
-        for model_name in unique_models:
+        for model_name in models_to_try:
             try:
                 payload = {
                     "model": model_name,

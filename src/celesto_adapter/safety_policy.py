@@ -1,4 +1,4 @@
-﻿import re
+import re
 from urllib.parse import urlparse
 from typing import List, Optional, Set
 
@@ -129,7 +129,14 @@ class SafetyPolicy:
                 )
 
         # 4. Enforceable network destination restrictions
-        urls = self.extract_urls(cmd)
+        # Only inspect URLs that are destinations of outbound network activity.
+        # Ignore file-writing heredoc and echo bodies so reference links in written reports do not false-positive.
+        cmd_for_urls = cmd
+        if "<< 'EOF'" in cmd or "<< EOF" in cmd or "<< 'HEREDOC'" in cmd:
+            cmd_for_urls = re.sub(r"<<\s*['\"]?EOF['\"]?[\s\S]*?(\nEOF|\Z)", "", cmd)
+            cmd_for_urls = re.sub(r"<<\s*['\"]?HEREDOC['\"]?[\s\S]*?(\nHEREDOC|\Z)", "", cmd_for_urls)
+
+        urls = self.extract_urls(cmd_for_urls)
         for url in urls:
             if not self.check_network_destination(url):
                 raise CommandBlockedError(
